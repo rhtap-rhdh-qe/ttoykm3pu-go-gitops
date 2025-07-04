@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ttoykm3pu-go-gitops
+  description: This is GitOps manifest for ttoykm3pu-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ttoykm3pu-go
+    backstage.io/kubernetes-id: ttoykm3pu-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ttoykm3pu-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ttoykm3pu-go
